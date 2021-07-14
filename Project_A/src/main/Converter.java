@@ -14,6 +14,7 @@ public class Converter {
 		int menuSelection = 1;
 		int conversionChoice;
 		int initialAmount = 0;
+		Converter convert = new Converter();
 		Scanner sc = new Scanner(System.in);
 		while (menuSelection != QUIT) {
 			conversionChoice = 0;
@@ -28,17 +29,16 @@ public class Converter {
 				case 1: {
 					System.out.println("Enter number of Cups: ");
 					initialAmount = sc.nextInt();
-					System.out.println(convertCupsToTeaspoons(initialAmount));
+					System.out.println(convert.convertCupsToTeaspoons(initialAmount));
 					break;
 				}
 				case 2: {
 					System.out.println("Enter number of Gallons: ");
 					initialAmount = sc.nextInt();
-					System.out.println(convertUsGallonsToImp(initialAmount));
+					System.out.println(convert.convertUsGallonsToImp(initialAmount));
 					break;
 				}
 				default: {
-					break;
 				}
 				}
 
@@ -50,17 +50,16 @@ public class Converter {
 				case 1: {
 					System.out.println("Enter number of Miles: ");
 					initialAmount = sc.nextInt();
-					System.out.println(convertMilesToKilometers(initialAmount));
+					System.out.println(convert.convertMilesToKilometers(initialAmount));
 					break;
 				}
 				case 2: {
 					System.out.println("Enter number of Feet: ");
 					initialAmount = sc.nextInt();
-					System.out.println(convertFeetToMiles(initialAmount));
+					System.out.println(convert.convertFeetToMiles(initialAmount));
 					break;
 				}
 				default: {
-					break;
 				}
 				}
 			}
@@ -68,19 +67,19 @@ public class Converter {
 		sc.close();
 	}
 
-	public static double convertCupsToTeaspoons(double qty) {
+	public double convertCupsToTeaspoons(double qty) {
 		return qty * CUPS_TO_TEASPOONS;
 	}
 
-	public static double convertUsGallonsToImp(double qty) {
+	public double convertUsGallonsToImp(double qty) {
 		return qty * USGALLONS_TO_IMPGALLONS;
 	}
 
-	public static double convertMilesToKilometers(double qty) {
+	public double convertMilesToKilometers(double qty) {
 		return qty * MILES_TO_KILOMETERS;
 	}
 
-	public static double convertFeetToMiles(double qty) {
+	public double convertFeetToMiles(double qty) {
 		return qty * FEET_TO_MILES;
 	}
 }
