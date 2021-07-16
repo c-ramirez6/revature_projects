@@ -1,0 +1,6 @@
+5
+The Foyer:The main foyer in the house:The foyer is a large room with a hard wood floor.  There is a large chandeller hanging from the high rise celing.:North,The Kitchen,South East,The Living Room,West,The West Corridor
+The Kitchen:The kitchen in the house:The kitchen is a modern kitchen with many new appliences.  There is a large metal refridgerator in the kitchen:South,The Foyer
+The Living Room:The luxurious living room of the house:The living room is filled with soft couches:North West,The Foyer
+The West Corridor:The west corridor connects the main house to the side house:The west corridor is a bare and dusty hallway:East,The Foyer,North,The Garden
+The Garden:The garden is a small yet carefully taken care of garden:The floura is dense yet carefully maintained:South,The West Corridor
