@@ -8,4 +8,8 @@ public class Player {
 	public Player(Room currentRoom) {
 		this.currentRoom = currentRoom;
 	}
+	
+	public void moveRooms(String direction) {
+		currentRoom = currentRoom.getExit(direction.toLowerCase());
+	}
 }
