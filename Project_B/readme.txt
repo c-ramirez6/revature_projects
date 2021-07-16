@@ -1,0 +1,2 @@
+For the HouseLayout file. The convention is as follows
+<Name of room>:<Short Description>:<Long Description>:<Direction1>,<Room in that direction1>,<Direction2>,<Room in that direction2>,(You can repete this as many times as wanted)
