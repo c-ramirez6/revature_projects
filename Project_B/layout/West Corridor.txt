@@ -1,0 +1,4 @@
+The West Corridor
+The west corridor connects the main house to the side house
+The west corridor is a bare and dusty hallway, to the north you can hear running water from what you can assume to be a garden.
+east,The Foyer,north,The Garden

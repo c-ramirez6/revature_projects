@@ -1,0 +1,10 @@
+The Foyer
+The main foyer in the house
+The foyer is a large room with a hard wood floor.  There is a large chandeller hanging from the high rise celing.  To the north there is a kitchen.  Off to the west there is a dark corridor.  To the south east you see a light coming from what you assume to be a fireplace.
+north,The Kitchen,south east,The Living Room,west,The West Corridor
+Desk
+A large wooden desk.
+The large wooden desk seems fairly old.  There are a number of papers scattered across the top of the desk, with what seems to be dripping red ink splattered about.
+Broken Lamp
+A broken lamp laying on the floor
+The lamp has fallen over at some point causing shards of broken lightbulbs to be scattered across the floor.  There seems to be dried blood on some of the shards.

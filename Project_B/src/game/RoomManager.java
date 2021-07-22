@@ -2,6 +2,7 @@ package game;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -9,51 +10,67 @@ import fixtures.Room;
 
 public class RoomManager {
 
-	private static final int ROOM_EXITS = 3;
-	private static final int LONG_DESCRIPTION = 2;
-	private static final int SHORT_DESCRIPTION = 1;
-	private static final int ROOM_NAME = 0;
-	public Room[] rooms;
+	public ArrayList<Room> rooms = new ArrayList<>();
 	public String[] roomData;
 	public HashMap<String, Room> roomMap = new HashMap<String, Room>();
-	public RoomManager()	{
-		try {
-		      File house = new File("HouseLayout.txt");
-		      Scanner fileReader = new Scanner(house);
-		      int houseSize = Integer.parseInt(fileReader.nextLine());
-		      System.out.println(houseSize);
-		      rooms = new Room[houseSize];
-		      int i = 0;
-		      while (fileReader.hasNextLine()) {
-		        String roomInformation = fileReader.nextLine();
-		        roomData = roomInformation.split(":");
-		        rooms[i] = new Room(roomData[ROOM_NAME], roomData[SHORT_DESCRIPTION], roomData[LONG_DESCRIPTION], roomData[ROOM_EXITS]);
-		        roomMap.put(rooms[i].name, rooms[i]);
-		        System.out.println("Loading in " + rooms[i].name);
-		        i++;
-		      }
-		      
-		      for(Room room : rooms)	{
-		    	  String[] exitInfo = room.exits.split(",");
-		    	  for(int j = 0; j < exitInfo.length - 1; j++)	{
-		    		  room.roomConnections.put(exitInfo[j], roomMap.get(exitInfo[j+1]));
-		    		  j++;
-		    	  }
-		      }
 
-		      for(Room x : rooms) {
-		    	  System.out.println(x.name);
-		    	  for(String y : x.getExits().keySet()) {
-		    		  System.out.println(y + " " + x.getExits().get(y).name);
-		    	  }
-		    	  System.out.println();
-		      }
-		      
-		      
-		      fileReader.close();
-		    } catch (FileNotFoundException e) {
-		      System.out.println("An error occurred.");
+	public RoomManager() {
+
+		try {
+			File folder = new File("layout/");
+			File[] listOfFiles = folder.listFiles();
+			int i = 0;
+			if(listOfFiles != null && listOfFiles.length > 0) {
+				for(File file : listOfFiles) {
+					Scanner fileReader = new Scanner(file);	
+					addRoom(fileReader, i);
+					while (fileReader.hasNextLine()) {
+						addItem(fileReader, i);
+				}
+					i++;
+					fileReader.close();
+				}
+				for (Room room : rooms) {
+					room.populateExits(roomMap);
+				}
+				/*
+				 * Used for debugging. Prints all of the rooms connected rooms
+				 */
+				for (Room x : rooms) {
+					printLoadIn(x);
+				}
+			}
+			else	{
+				nullLayout();
+			}
+
+		}catch (FileNotFoundException e) {
+		      System.out.println("Could not find layout folder or folder is empty");
 		      e.printStackTrace();
 		    }
+	}
+
+	private void printLoadIn(Room x) {
+		System.out.println(x.name);
+		for (String y : x.getExits().keySet()) {
+			System.out.println(y + " " + x.getExits().get(y).name);
+		}
+		System.out.println();
+	}
+	
+	private void addRoom(Scanner fileReader, int i)	{
+		rooms.add(new Room(fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine()));
+		roomMap.put(rooms.get(i).name, rooms.get(i));
+	}
+	
+	private void addItem(Scanner fileReader, int i) {
+		rooms.get(i).addItem(fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine());
+	}
+	
+	private void nullLayout()	{
+		System.out.println("Could not find layout folder or folder is empty");
+		System.out.println("Generating default room");
+		rooms.add(new Room("n/a", "n/a", "n/a", "n/a"));
+		roomMap.put("n/a", rooms.get(0));
 	}
 }

@@ -1,0 +1,4 @@
+The Bathroom
+A small bathroom in the living room
+The small bathroom is extremely bare.  There is not much inside
+north,The Living Room

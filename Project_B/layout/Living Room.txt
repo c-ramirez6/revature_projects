@@ -1,0 +1,4 @@
+The Living Room
+The luxurious living room of the house
+The living room is filled with soft couches
+north west,The Foyer,south,The Bathroom
