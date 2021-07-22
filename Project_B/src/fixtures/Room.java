@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Room extends Fixtures {
 	public String exits;
 	public HashMap<String, Room> roomConnections = new HashMap<String, Room>();
-	public HashMap<String, Fixtures> items = new HashMap<String, Fixtures>();
+	public HashMap<String, Item> items = new HashMap<String, Item>();
 
 	public Room(String name, String shortDescription, String longDescription, String exits) {
 		super(name, shortDescription, longDescription);
@@ -20,8 +20,8 @@ public class Room extends Fixtures {
 		return roomConnections.get(direction);
 	}
 
-	public void addItem(String name, String shortDescription, String longDescription) {
-		items.put(name, new Item(name, shortDescription, longDescription));
+	public void addItem(String name, String shortDescription, String longDescription, String interactDescription) {
+		items.put(name, new Item(name, shortDescription, longDescription, interactDescription));
 	}
 
 	public void populateExits(HashMap<String, Room> roomMap) {

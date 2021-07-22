@@ -1,7 +1,8 @@
 The Kitchen
-The kitchen in the house
+The kitchen in the house.  The foyer is off to the south
 The kitchen is a modern kitchen with many new appliences.  There is a large metal refridgerator in the kitchen
 south,The Foyer
 Oven
 A shiny new oven
 A brand new oven in the kitchen, which is made from high quality materials.  It seems to have been left on.
+A quick look inside of the oven reveals of burnt pile of cinders inside

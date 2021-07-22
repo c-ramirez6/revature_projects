@@ -1,0 +1,8 @@
+Shed
+An old shed, going south will lead you back to the garden
+The shed is fairly old, but is filled with many tools that have been used recently.
+south,The Garden
+Rake
+A new rake
+A new rake that still has the tag on it, it seems to never have been used
+You look at the tag on the rake to see the words are all in a language you can not understand

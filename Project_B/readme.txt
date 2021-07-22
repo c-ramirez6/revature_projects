@@ -7,9 +7,11 @@ Layout should be:
 <Item1>
 <Item1 short description>
 <Item1 long description>
+<Item1 interact text>
 <Item2>
 <Item2 short description>
 <Item2 long description>
+<Item2 interact text>
 (You can have as many items in a room as you want)
 
 ***IMPORTANT***

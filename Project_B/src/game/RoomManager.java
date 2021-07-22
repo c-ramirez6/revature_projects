@@ -11,12 +11,15 @@ import fixtures.Room;
 public class RoomManager {
 
 	public ArrayList<Room> rooms = new ArrayList<>();
-	public String[] roomData;
 	public HashMap<String, Room> roomMap = new HashMap<String, Room>();
 
 	public RoomManager() {
 
 		try {
+			/*
+			 * Reads in layout folder and makes an array of files containing 
+			 * all of the files in the layout folder
+			 */
 			File folder = new File("layout/");
 			File[] listOfFiles = folder.listFiles();
 			int i = 0;
@@ -50,6 +53,10 @@ public class RoomManager {
 		    }
 	}
 
+	
+	/*
+	 * Prints the room and all of the connected rooms
+	 */
 	private void printLoadIn(Room x) {
 		System.out.println(x.name);
 		for (String y : x.getExits().keySet()) {
@@ -58,15 +65,24 @@ public class RoomManager {
 		System.out.println();
 	}
 	
+	/*
+	 * Adds room to room map and room array list
+	 */
 	private void addRoom(Scanner fileReader, int i)	{
 		rooms.add(new Room(fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine()));
 		roomMap.put(rooms.get(i).name, rooms.get(i));
 	}
 	
+	/*
+	 * Adds an item to rooms item map
+	 */
 	private void addItem(Scanner fileReader, int i) {
-		rooms.get(i).addItem(fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine());
+		rooms.get(i).addItem(fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine(), fileReader.nextLine());
 	}
 	
+	/*
+	 * Creates a room in case there is no files found
+	 */
 	private void nullLayout()	{
 		System.out.println("Could not find layout folder or folder is empty");
 		System.out.println("Generating default room");

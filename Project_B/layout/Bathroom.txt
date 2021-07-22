@@ -1,4 +1,4 @@
 The Bathroom
-A small bathroom in the living room
+A small bathroom in the living room.  The living room is to the north
 The small bathroom is extremely bare.  There is not much inside
 north,The Living Room

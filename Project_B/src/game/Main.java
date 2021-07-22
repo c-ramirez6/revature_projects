@@ -11,6 +11,7 @@ public class Main {
 	private static final int COMMAND = 0;
 	final static List<String> MOVE_COMMANDS = List.of("move", "go", "walk", "move to");
 	final static List<String> OBSERVATION_COMMANDS = List.of("look at", "look", "examine");
+	final static List<String> INTERACTION_COMMANDS = List.of("touch", "grab", "pick up");
 
 	public static void main(String[] args) {
 		RoomManager rm = new RoomManager();
@@ -82,6 +83,12 @@ public class Main {
 				player.currentRoom = player.getRoomOrder().pop();
 			}	catch(java.util.EmptyStackException e) {
 				System.out.println("You are at the first room.  Can not go back any farther");
+			}
+		}
+		else if(INTERACTION_COMMANDS.contains(command[COMMAND].toLowerCase()))	{
+			if(player.currentRoom.items.get(command[NOUN]) != null)	{
+				System.out.println("\n" + player.currentRoom.items.get(command[NOUN]).name + ": " 
+			+ player.currentRoom.items.get(command[NOUN]).getInteractDesc() + "\n");
 			}
 		}
 	}

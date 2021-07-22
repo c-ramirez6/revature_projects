@@ -1,4 +1,4 @@
 The Living Room
-The luxurious living room of the house
+The luxurious living room of the house.  To the north west is the foyer, and to the south is a small bathroom
 The living room is filled with soft couches
 north west,The Foyer,south,The Bathroom
