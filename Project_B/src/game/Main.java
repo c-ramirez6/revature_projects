@@ -11,7 +11,6 @@ public class Main {
 	private static final int COMMAND = 0;
 	final static List<String> MOVE_COMMANDS = List.of("move", "go", "walk", "move to");
 	final static List<String> OBSERVATION_COMMANDS = List.of("look at", "look", "examine");
-	private static final String STARTING_ROOM = "The Foyer";
 
 	public static void main(String[] args) {
 		RoomManager rm = new RoomManager();
@@ -22,7 +21,7 @@ public class Main {
 			player = new Player(rm.roomMap.get("n/a"));
 		}
 		else	{
-			player = new Player(rm.roomMap.get(STARTING_ROOM));
+			player = new Player(rm.rooms.get(0));
 		}
 		System.out.println("Type help for list of commands as well as how to format commands");
 		System.out.println("Will perform better if you pay attention to case sensitivity");

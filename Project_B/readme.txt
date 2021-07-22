@@ -17,4 +17,6 @@ Pay attention to case sensitivity.  Rooms will not be connected if the room name
 Example: if in the living room, you wanted to connect a bathroom to the south, if you name the bathroom <The Bathroom> if the living room file, it must be <The Bathroom> in its own file.
 
 Make sure to leave no new lines anywhere in the .txt files!
+
+Indicate starting room by giving the .txt file a title that will put it at the top of the folder
 ***IMPORTANT***

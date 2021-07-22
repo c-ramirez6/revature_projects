@@ -34,6 +34,6 @@ public class Room extends Fixtures {
 
 	@Override
 	public String toString() {
-		return "Room [exits=" + exits + ", roomConnections=" + roomConnections + ", items=" + items + "]";
+		return "Room [name=" + this.name + ", roomConnections=" + roomConnections + ", items=" + items + "]";
 	}
 }
