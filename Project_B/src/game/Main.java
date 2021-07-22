@@ -104,6 +104,10 @@ public class Main {
 		for (String x : OBSERVATION_COMMANDS) {
 			System.out.println(x);
 		}
+		System.out.println("\nInteraction Commands:\n");
+		for(String x : INTERACTION_COMMANDS)	{
+			System.out.println(x);
+		}
 		System.out.println("\n");
 	}
 
